@@ -1,8 +1,10 @@
 import React from 'react';
 import './App.css';
 import TopBar from './TopBar';
-import { SidebarCategories } from './components/SidebarCategories'
-import { ProductListing } from './components/ProductListing'
+import { SidebarCategories } from './components/SidebarCategories';
+import { ProductsListingPage } from './components/ProductsListingPage';
+import ProductPage from './components/ProductPage';
+import { Route, Switch, RouteComponentProps, BrowserRouter as Router } from 'react-router-dom';
 
 const App: React.FC = () => {
   return (
@@ -14,12 +16,20 @@ const App: React.FC = () => {
           {SidebarCategories}
         </div>
         <div className="w-5/6 pl-4 text-left container">
-          <div className="py-3 border-solid border-gray-200 border-b w-full">
-            <p>Displaying 1 of 1 results</p>
-          </div>
-          <div className="flex flex-wrap items-center -mx-1">
-            {ProductListing}
-          </div>
+          <Router>
+            <Switch>
+              <Route exact={true} path="/" component={ProductsListingPage} />
+              <Route exact={true} path="/products" component={ProductsListingPage} />
+              <Route
+                exact={true}
+                path="/products/:id"
+                component={
+                  ({ match }: RouteComponentProps<{ id: string }>) => (
+                    <ProductPage id={match.params.id} />
+                  )}
+              />
+            </Switch>
+          </Router>
         </div>
       </div>
     </div>

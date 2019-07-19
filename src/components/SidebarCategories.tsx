@@ -1,6 +1,7 @@
 import React from 'react';
 import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
+import { Category } from '../types/category'
 
 const ALL_CATEGORIES_QUERY = gql`
   query {
@@ -10,11 +11,6 @@ const ALL_CATEGORIES_QUERY = gql`
     }
    }
 `;
-
-type Category = {
-  id: string,
-  name: string
-}
 
 interface Data {
   categories: Array<Category>;

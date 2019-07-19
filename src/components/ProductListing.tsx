@@ -1,39 +1,9 @@
 import React from 'react';
 import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
-
-const ALL_PRODUCTS_QUERY = gql`
-  query {
-    products {
-      id
-      name
-      description
-      variants {
-        id
-        name
-        position
-        sku
-        price
-      }
-    }
-   }
-`;
-
-type Variant = {
-  id: string,
-  name: string,
-  position: string,
-  price: string,
-  sku: string
-}
-
-
-type Product = {
-  id: string,
-  name: string,
-  description: string,
-  variants: Array<Variant>
-}
+import { Link } from 'react-router-dom';
+import { Product } from '../types/product';
+import { Variant } from '../types/variant';
+import { ALL_PRODUCTS_QUERY } from '../queries/AllProductsQuery'
 
 interface Data {
   products: Array<Product>;
@@ -48,7 +18,11 @@ export const ProductListing = <Query<Data, {}> query={ALL_PRODUCTS_QUERY}>
       return (
         <div className="rounded shadow-md w-1/3 my-1 px-1 py-4 h-64" key={product.id}>
           <div className="px-4 w-full">
-            <div className="font-bold text-xl mb-2">{product.name}</div>
+            <div className="font-bold text-xl mb-2">
+              <Link to={{ pathname: `/products/${product.id}` }} className="text-indigo-700 hover:underline">
+                {product.name}
+              </Link>
+            </div>
             <p className="text-gray-700 text-base">
               {product.description}
             </p>
