@@ -13,6 +13,13 @@ export const PRODUCT_QUERY = gql`
         sku
         price
       }
+      productProperties {
+        value
+        property {
+          name
+          presentation
+        }
+      }
     }
    }
 `;

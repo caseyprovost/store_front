@@ -2,7 +2,6 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import { Link } from 'react-router-dom';
 import { Product } from '../types/product';
-import { Variant } from '../types/variant';
 import { ALL_PRODUCTS_QUERY } from '../queries/AllProductsQuery'
 
 interface Data {
