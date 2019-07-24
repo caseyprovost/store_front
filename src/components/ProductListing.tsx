@@ -1,12 +1,12 @@
 import React from 'react';
 import { Query } from 'react-apollo';
 import { Link } from 'react-router-dom';
-import { Product } from '../types/product';
+import { Variant } from '../types/variant';
 import { ProductCard } from './ProductCard';
 import { ALL_PRODUCTS_QUERY } from '../queries/AllProductsQuery'
 
 interface Data {
-  products: Array<Product>;
+  variants: Array<Variant>;
 };
 
 export const ProductListing = <Query<Data, {}> query={ALL_PRODUCTS_QUERY}>
@@ -14,8 +14,8 @@ export const ProductListing = <Query<Data, {}> query={ALL_PRODUCTS_QUERY}>
     if (loading) return 'Loading...';
     if (error) return `Error! ${error.message}`;
 
-    return data && data.products.map((product, index) => {
-      return (<ProductCard product={product} />)
+    return data && data.variants.map((variant, index) => {
+      return (<ProductCard variant={variant} />)
     });
   }}
 </Query>

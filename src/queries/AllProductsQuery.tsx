@@ -2,17 +2,22 @@ import gql from 'graphql-tag';
 
 export const ALL_PRODUCTS_QUERY = gql`
   query {
-    products {
+    variants {
       id
       name
-      description
-      variants {
+      position
+      sku
+      price
+
+      product {
         id
         name
-        position
-        sku
-        price
+        description
+
+        optionTypes {
+          name
+        }
       }
     }
-   }
+  }
 `;
