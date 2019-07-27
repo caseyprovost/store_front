@@ -10,7 +10,7 @@ import { ApolloProvider as ApolloHooksProvider } from 'react-apollo-hooks';
 import { BrowserRouter } from 'react-router-dom';
 
 const client = new ApolloClient({
-  uri: "https://spider-web-proxy.herokuapp.com/graphql"
+  uri: "http://localhost:3000/graphql"
 });
 
 ReactDOM.render(

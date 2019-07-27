@@ -6,5 +6,6 @@ export type Variant = {
   position: string,
   price: string,
   sku: string,
+  description: string,
   product: Product
 }
