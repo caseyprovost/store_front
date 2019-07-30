@@ -11,11 +11,11 @@ const App: React.FC = () => {
     <div className="App">
       <TopBar />
       <div className="md:flex">
-        <div className="mt-0 w-1/6 bg:teal-500 h-screen bg-gray-300 shadow sticky">
-          <h3 className="text-left ml-6 mt-5 mb-5">Categories</h3>
+        <div className="mt-0 w-1/6 h-screen bg-gray-900 shadow sticky">
+          <h3 className="text-left ml-6 mt-5 mb-2 text-indigo-500">Categories</h3>
           {SidebarCategories}
         </div>
-        <div className="w-5/6 pl-4 text-left container">
+        <div className="w-5/6 text-left container">
           <Router>
             <Switch>
               <Route exact={true} path="/" component={ProductsListingPage} />
