@@ -28,9 +28,9 @@
   },
   "scripts": {
     "lint": "tslint src/**/*.ts{,x} --project .",
-    "prestart": "tailwind build ./src/styles/custom.css -c ./tailwind.config.js -o ./src/styles.css",
+    "prestart": "postcss ./src/styles/custom.css -o ./src/styles.css",
     "start": "react-scripts start",
-    "prebuild": "tailwind build ./src/styles/custom.css -c ./tailwind.config.js -o ./src/styles.css",
+    "prebuild": "postcss ./src/styles/custom.css -o ./src/styles.css",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

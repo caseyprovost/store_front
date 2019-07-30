@@ -8,11 +8,19 @@ export const VARIANT_QUERY = gql`
       position
       sku
       price
+      description
 
       product {
         id
         name
-        description
+
+        variants {
+          id
+          name
+          position
+          sku
+          price
+        }
 
         productProperties {
           value

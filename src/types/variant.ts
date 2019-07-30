@@ -1,4 +1,5 @@
 import { Product } from './product'
+import { OptionValue } from './optionValue'
 
 export type Variant = {
   id: string,
@@ -7,5 +8,6 @@ export type Variant = {
   price: string,
   sku: string,
   description: string,
-  product: Product
+  product: Product,
+  optionValues: Array<OptionValue>
 }
