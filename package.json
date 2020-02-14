@@ -24,7 +24,7 @@
     "react-scripts": "3.0.1",
     "tailwindcss": "^1.0.5",
     "typescript": "^3.5.3",
-    "yarn": "^1.17.3"
+    "yarn": "^1.22.0"
   },
   "scripts": {
     "lint": "tslint src/**/*.ts{,x} --project .",
